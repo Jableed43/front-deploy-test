@@ -36,7 +36,7 @@ function CreateProduct({ productToEdit, updateProductList }) {
     status: "AVAILABLE",
     category: { _id: "", name: "" },
     highlighted: false,
-    stock: 0,
+    quantity: 0,
   });
 
   useEffect(() => {
@@ -64,7 +64,7 @@ function CreateProduct({ productToEdit, updateProductList }) {
         status: productToEdit.status,
         category: category,
         highlighted: productToEdit.highlighted,
-        stock: productToEdit.stock,
+        quantity: productToEdit.quantity,
       });
     }
   }, [productToEdit, categoriesLoaded]);
@@ -218,12 +218,12 @@ function CreateProduct({ productToEdit, updateProductList }) {
 
           <Grid2 item xs={12} sm={6}>
             <TextField
-              label="Available Stock"
-              name="stock"
+              label="Available quantity"
+              name="quantity"
               type="number"
               required
               fullWidth
-              value={form.stock}
+              value={form.quantity}
               onChange={handleInputChange}
             />
           </Grid2>
